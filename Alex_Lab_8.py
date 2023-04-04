@@ -19,7 +19,6 @@ img_height, img_width, _ = img.shape
 def video_processing():
     cap = cv2.VideoCapture(0)
     down_points = (640, 480)
-    i = 0
     while True:
         ret, frame = cap.read()
         if not ret:
@@ -48,7 +47,6 @@ def video_processing():
             break
 
         time.sleep(0.1)
-        i += 1
     cap.release()
 
 
