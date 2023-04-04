@@ -3,7 +3,9 @@ import cv2
 import time
 
 im = Image.open('variant-8.jpg')
-im_crop = im.crop((400, 175, 800, 575))
+width, height = im.size
+
+im_crop = im.crop(((width-400)//2, (height-400)//2+1, (width+400)//2, (height+400)//2))
 im_crop.show()
 
 fl = Image.open('fly64.png')
@@ -13,7 +15,6 @@ fl.save('fly24.png')
 img = cv2.imread('fly24.png')
 
 img_height, img_width, _ = img.shape
-
 
 def video_processing():
     cap = cv2.VideoCapture(0)
@@ -34,9 +35,8 @@ def video_processing():
             c = max(contours, key=cv2.contourArea)
             x, y, w, h = cv2.boundingRect(c)
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-            if i % 5 == 0:
-                a = x + (w // 2)
-                b = y + (h // 2)
+            a = x + (w // 2)
+            b = y + (h // 2)
 
         cv2.line(frame, (a, b + (h // 2)), (a, y), (0, 255, 255), 5)
         cv2.line(frame, (x, b), (a + (w // 2), b), (0, 255, 255), 5)
