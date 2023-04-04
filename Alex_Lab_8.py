@@ -5,7 +5,7 @@ import time
 im = Image.open('variant-8.jpg')
 width, height = im.size
 
-im_crop = im.crop(((width-400)//2, (height-400)//2+1, (width+400)//2, (height+400)//2))
+im_crop = im.crop(((width - 400) // 2, (height - 400) // 2 + 1, (width + 400) // 2, (height + 400) // 2))
 im_crop.show()
 
 fl = Image.open('fly64.png')
