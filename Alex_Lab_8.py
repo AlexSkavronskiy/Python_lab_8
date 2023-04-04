@@ -37,9 +37,8 @@ def video_processing():
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             a = x + (w // 2)
             b = y + (h // 2)
-
-        cv2.line(frame, (a, b + (h // 2)), (a, y), (0, 255, 255), 5)
-        cv2.line(frame, (x, b), (a + (w // 2), b), (0, 255, 255), 5)
+            cv2.line(frame, (a, b + (h // 2)), (a, y), (0, 255, 255), 5)
+            cv2.line(frame, (x, b), (a + (w // 2), b), (0, 255, 255), 5)
 
         if b - img_height // 2 > 32 and a - img_width // 2 > 32:
             frame[b - img_height // 2:b + img_height // 2, a - img_width // 2:a + img_width // 2] = img
