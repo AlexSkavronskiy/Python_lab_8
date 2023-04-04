@@ -16,6 +16,7 @@ img = cv2.imread('fly24.png')
 
 img_height, img_width, _ = img.shape
 
+
 def video_processing():
     cap = cv2.VideoCapture(0)
     down_points = (640, 480)
@@ -51,7 +52,6 @@ def video_processing():
 
 
 if __name__ == '__main__':
-    # image_processing()
     video_processing()
 
 cv2.waitKey(0)
