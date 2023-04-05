@@ -40,8 +40,8 @@ def video_processing():
             cv2.line(frame, (a, b + (h // 2)), (a, y), (0, 255, 255), 4)
             cv2.line(frame, (x, b), (a + (w // 2), b), (0, 255, 255), 4)
 
-        if b - img_height // 2 > 32 and a - img_width // 2 > 32:
-            frame[b - img_height // 2:b + img_height // 2, a - img_width // 2:a + img_width // 2] = img
+            if b - img_height // 2 > 32 and a - img_width // 2 > 32:
+                frame[b - img_height // 2:b + img_height // 2, a - img_width // 2:a + img_width // 2] = img
 
         cv2.imshow('frame', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
